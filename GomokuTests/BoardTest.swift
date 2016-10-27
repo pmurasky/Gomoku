@@ -40,7 +40,14 @@ class BoardTest: XCTestCase {
     }
     
     func testCannotPlaceStonesOutsideBounds() throws {
-        XCTAssertThrowsError(try board.place(row: 42, column: 42, player: Player.White))
+        XCTAssertThrowsError(try board.place(row: -1, column: -1, player: Player.White))
+        XCTAssertThrowsError(try board.place(row: board.WIDTH, column: board.HEIGHT, player: Player.White))
+        XCTAssertThrowsError(try board.place(row: 0, column: -1, player: Player.White))
+        XCTAssertThrowsError(try board.place(row: 0, column: board.HEIGHT, player: Player.White))
+        XCTAssertThrowsError(try board.place(row: -1, column: 0, player: Player.White))
+        XCTAssertThrowsError(try board.place(row: board.WIDTH, column: 0, player: Player.White))
+        
+        XCTAssertEqual(0, board.stonesPlaced())
         
     }
 }
