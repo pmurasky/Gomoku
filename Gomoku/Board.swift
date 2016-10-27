@@ -12,15 +12,13 @@ class Board {
     let WIDTH = 19
     let HEIGHT = 19
     
-    var stones = 0
     var placedStones = [Int: Player]()
     
     func stonesPlaced() -> Int {
-        return stones
+        return placedStones.count
     }
     
     func place(row: Int, column: Int, player: Player) throws {
-        stones += 1
         let loc = makeLocation(row: row, column: column)
         if (placedStones[loc] != nil){
             throw SpaceOccupied()
