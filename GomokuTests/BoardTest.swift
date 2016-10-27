@@ -19,7 +19,7 @@ class BoardTest: XCTestCase {
         let row = 1
         let col = 1
         let player = Player.White
-        try board.add(row: row, column: col, player: player)
+        try board.place(row: row, column: col, player: player)
         
         XCTAssertEqual(1, board.stonesPlaced())
         
@@ -30,13 +30,13 @@ class BoardTest: XCTestCase {
     
     func testKnowsAboutEmptyIntersections() throws{
         XCTAssertEqual(Player.Empty, board.get(row: 0, column: 1))
-        try board.add(row: 0, column: 1, player: Player.White)
+        try board.place(row: 0, column: 1, player: Player.White)
          XCTAssertEqual(Player.White, board.get(row: 0, column: 1))
     }
     
     func testCannotAddToOccupiedIntersection() throws {
-        try board.add(row: 0, column: 0, player: Player.White)
-        XCTAssertThrowsError(try board.add(row: 0, column: 0, player: Player.Black))
+        try board.place(row: 0, column: 0, player: Player.White)
+        XCTAssertThrowsError(try board.place(row: 0, column: 0, player: Player.Black))
         
     }
 }

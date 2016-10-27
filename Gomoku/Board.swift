@@ -19,7 +19,7 @@ class Board {
         return stones
     }
     
-    func add(row: Int, column: Int, player: Player) throws {
+    func place(row: Int, column: Int, player: Player) throws {
         stones += 1
         let loc = makeLocation(row: row, column: column)
         if (placedStones[loc] != nil){
