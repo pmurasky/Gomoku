@@ -20,28 +20,30 @@ class BoardTest: XCTestCase {
         
         XCTAssertEqual(1, board.stonesPlaced())
         
-        var placedStone = try board.get(row: 1, column: 1)
+        var placedStone = try board.get(intersection: Intersection(1,1))
         XCTAssertEqual(Player.White, placedStone)
         
         try board.place(intersection: Intersection(board.WIDTH-1,board.HEIGHT-1), player: Player.Black)
         
         XCTAssertEqual(2, board.stonesPlaced())
         
-        placedStone = try board.get(row: board.WIDTH-1, column: board.HEIGHT-1)
+        placedStone = try board.get(intersection: Intersection(board.WIDTH-1,board.HEIGHT-1))
         XCTAssertEqual(Player.Black, placedStone)
         
     }
     
     func testKnowsAboutEmptyIntersections() throws{
-        XCTAssertEqual(Player.Empty, try board.get(row: 0, column: 1))
-        try board.place(intersection: Intersection(0,1), player: Player.White)
-         XCTAssertEqual(Player.White, try board.get(row: 0, column: 1))
+        let emptyIntersection = Intersection(0,1)
+        XCTAssertEqual(Player.Empty, try board.get(intersection: emptyIntersection))
+        try board.place(intersection: emptyIntersection, player: Player.White)
+        XCTAssertEqual(Player.White, try board.get(intersection: emptyIntersection))
     }
     
     func testCannotAddToOccupiedIntersection() throws {
-        try board.place(intersection: Intersection(0,0), player: Player.White)
-        XCTAssertThrowsError(try board.place(intersection: Intersection(0,0), player: Player.Black))
-        XCTAssertThrowsError(try board.place(intersection: Intersection(0,0), player: Player.White))
+        let whiteOccupiedIntersection = Intersection(0,0)
+        try board.place(intersection: whiteOccupiedIntersection, player: Player.White)
+        XCTAssertThrowsError(try board.place(intersection: whiteOccupiedIntersection, player: Player.Black))
+        XCTAssertThrowsError(try board.place(intersection: whiteOccupiedIntersection, player: Player.White))
     }
     
     func testCannotPlaceStonesOutsideBounds() throws {

@@ -25,26 +25,22 @@ class Board {
     }
     
     func place(intersection: Intersection, player: Player) throws {
-        try place(row: intersection.row, column: intersection.column, player: player)
-    }
-    
-    func place(row: Int, column: Int, player: Player) throws {
-        let loc = try makeLocation(row: row, column: column)
+        let loc = try makeLocation(intersection: intersection)
         if (placedStones[loc] != nil){
             throw SpaceOccupied()
         }
         placedStones[loc] = player
     }
     
-    func makeLocation(row: Int, column: Int) throws -> Int {
-        if (row < 0 || row  >= WIDTH || column < 0 || column >= HEIGHT){
+    func makeLocation(intersection: Intersection) throws -> Int {
+        if (intersection.row < 0 || intersection.row  >= WIDTH || intersection.column < 0 || intersection.column >= HEIGHT){
             throw BadLocation()
         }
-        return column * WIDTH + row
+        return intersection.column * WIDTH + intersection.row
     }
     
-    func get(row: Int, column: Int) throws -> Player {
-        let loc = try makeLocation(row: row, column: column)
+    func get(intersection: Intersection) throws -> Player{
+        let loc = try makeLocation(intersection: intersection)
         if let stone = placedStones[loc]{
             return stone
         }
