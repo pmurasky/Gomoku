@@ -48,4 +48,15 @@ class GomokuRulesTest: XCTestCase {
         
         try XCTAssertTrue(rules.isWin(board: board))
     }
+    
+   /* func testFiveInARowInAnyRow_isAWin() throws {
+        for row in 0..<board.HEIGHT {
+            board = Board()
+            for col in 0..<5 {
+                try board.place(intersection: Intersection(col,row), player: Player.White)
+            }
+        }
+        
+        try XCTAssertTrue(rules.isWin(board: board))
+    }*/
 }
