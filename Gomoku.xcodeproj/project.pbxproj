@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3068EA821DC7B90300DA1199 /* GomokuRulesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068EA811DC7B90300DA1199 /* GomokuRulesTest.swift */; };
+		3068EA841DC7BA2100DA1199 /* GomokuRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068EA831DC7BA2100DA1199 /* GomokuRules.swift */; };
 		307E1A3A1DBA49F700001554 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307E1A391DBA49F700001554 /* AppDelegate.swift */; };
 		307E1A3C1DBA49F700001554 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307E1A3B1DBA49F700001554 /* ViewController.swift */; };
 		307E1A3F1DBA49F700001554 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307E1A3D1DBA49F700001554 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3068EA811DC7B90300DA1199 /* GomokuRulesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GomokuRulesTest.swift; sourceTree = "<group>"; };
+		3068EA831DC7BA2100DA1199 /* GomokuRules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GomokuRules.swift; sourceTree = "<group>"; };
 		307E1A361DBA49F700001554 /* Gomoku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gomoku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		307E1A391DBA49F700001554 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		307E1A3B1DBA49F700001554 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 				307E1A421DBA49F700001554 /* LaunchScreen.storyboard */,
 				307E1A451DBA49F700001554 /* Info.plist */,
 				309A04B21DC1408C00031A85 /* Board.swift */,
+				3068EA831DC7BA2100DA1199 /* GomokuRules.swift */,
 			);
 			path = Gomoku;
 			sourceTree = "<group>";
@@ -113,6 +118,7 @@
 			children = (
 				307E1A501DBA49F700001554 /* Info.plist */,
 				309A04B01DC1401500031A85 /* BoardTest.swift */,
+				3068EA811DC7B90300DA1199 /* GomokuRulesTest.swift */,
 			);
 			path = GomokuTests;
 			sourceTree = "<group>";
@@ -261,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				307E1A3C1DBA49F700001554 /* ViewController.swift in Sources */,
+				3068EA841DC7BA2100DA1199 /* GomokuRules.swift in Sources */,
 				307E1A3A1DBA49F700001554 /* AppDelegate.swift in Sources */,
 				309A04B31DC1408C00031A85 /* Board.swift in Sources */,
 			);
@@ -271,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				309A04B11DC1401500031A85 /* BoardTest.swift in Sources */,
+				3068EA821DC7B90300DA1199 /* GomokuRulesTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,6 +32,7 @@ class BoardTest: XCTestCase {
         
     }
     
+    
     func testKnowsAboutEmptyIntersections() throws{
         let emptyIntersection = Intersection(0,1)
         XCTAssertEqual(Player.Empty, try board.get(intersection: emptyIntersection))
@@ -41,7 +42,9 @@ class BoardTest: XCTestCase {
     
     func testCannotAddToOccupiedIntersection() throws {
         let whiteOccupiedIntersection = Intersection(0,0)
+        
         try board.place(intersection: whiteOccupiedIntersection, player: Player.White)
+        
         XCTAssertThrowsError(try board.place(intersection: whiteOccupiedIntersection, player: Player.Black))
         XCTAssertThrowsError(try board.place(intersection: whiteOccupiedIntersection, player: Player.White))
     }
